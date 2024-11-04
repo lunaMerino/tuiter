@@ -12,6 +12,7 @@
             $guardar = mysqli_query($connect, $sql);
 
             if ($guardar) {
+                $username = $_SESSION["usuario"];
                 header("Location: ../main/profile.php?id=$id&username=$username");
             } else {
                 header("Location: ../error/error.php");
