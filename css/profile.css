@@ -1,0 +1,50 @@
+.user-follow-logout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user-follow {
+    display: flex;
+    flex-direction: row;
+}
+
+.follow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.followers-followings{
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.logout {
+    width:fit-content;
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.header {
+    height: 50vh;
+}
+
+.bodybody {
+    height: 50vh;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.descr {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

@@ -12,23 +12,25 @@
     <title>Followers</title>
 </head>
 <body>
-    <?php
-    if(isset($_POST["submit"])) {
 
-        require_once("../scripts/connection.php");
+    <h2>Followers</h2>
+        <?php
+        if(isset($_POST["submit"])) {
 
-        $id = mysqli_real_escape_string($connect, $_POST["profile_id"]);
-        $sql_followers = "SELECT u.username as username, u.id AS user_id, u.description as descript, foll.users_id as users_id, foll.userToFollowId as userToFollowId FROM follows as foll
-        JOIN users as u ON (foll.users_id = u.id) WHERE userToFollowId = '$id'";
-        $query_followers = mysqli_query($connect, $sql_followers);
+            require_once("../scripts/connection.php");
 
-        if ($query_followers && mysqli_num_rows($query_followers) > 0) {
-            while ($row_followers = mysqli_fetch_assoc($query_followers)) {
-            echo '<a href="profile.php?id=' . $row_followers["user_id"] . '&username=' . $row_followers["username"] . '">'.$row_followers["username"] .'</a><br><p>'.$row_followers["descript"].'</p>';
+            $id = mysqli_real_escape_string($connect, $_POST["profile_id"]);
+            $sql_followers = "SELECT u.username as username, u.id AS user_id, u.description as descript, foll.users_id as users_id, foll.userToFollowId as userToFollowId FROM follows as foll
+            JOIN users as u ON (foll.users_id = u.id) WHERE userToFollowId = '$id'";
+            $query_followers = mysqli_query($connect, $sql_followers);
+
+            if ($query_followers && mysqli_num_rows($query_followers) > 0) {
+                while ($row_followers = mysqli_fetch_assoc($query_followers)) {
+                echo '<a href="profile.php?id=' . $row_followers["user_id"] . '&username=' . $row_followers["username"] . '"><br>'.$row_followers["username"] .'</a><br><p>'.$row_followers["descript"].'</p>';
+                }
             }
-        }
 
-    }
-    ?>
+        }
+        ?>
 </body>
 </html>

@@ -1,0 +1,45 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logout{
+    margin-right: 30px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: fit-content;
+}
+
+.body{
+    margin-top: 30px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.not-followed{
+    padding-top: 30px;
+}
+
+.tweet{
+    margin-right: 30px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: start;
+}
+
+.textarea{
+
+    width:80vh;
+    height: 20vh;
+}
+
+.tweetButton{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
